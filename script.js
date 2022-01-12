@@ -22,7 +22,7 @@ function shiftController(shift, buttons) {
 
             for (let button of buttons) {
                 
-                if (checkSpecialButton(button)) 
+                if (checkSpecialButton(button) || button.textContent == "Space") 
                     continue;
                 
                 button.textContent = button.textContent.toUpperCase();
@@ -33,7 +33,7 @@ function shiftController(shift, buttons) {
 
             for (let button of buttons) {
 
-                if (checkSpecialButton(button)) 
+                if (checkSpecialButton(button) || button.textContent == "Space") 
                     continue;
 
                 button.textContent = button.textContent.toLowerCase();
@@ -61,6 +61,13 @@ function clearContent(clear, display) {
     })
 }
 
+function deleteSymbol(backspace, display) {
+    backspace.addEventListener("click", () => {
+        display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+    })
+}
+
 shiftController(shift, buttons);
 writeContent(buttons, display);
 clearContent(clear, display);
+deleteSymbol(backspace, display);
