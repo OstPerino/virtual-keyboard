@@ -42,7 +42,15 @@ body {
     border: none;
 }
 
-.btn.special {
+.btn.backspace {
+    width: 60px;
+}
+
+.btn.shift {
+    width: 60px;
+}
+
+.btn.clear {
     width: 60px;
 }
 
