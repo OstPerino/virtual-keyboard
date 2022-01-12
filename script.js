@@ -4,7 +4,7 @@ const display   = document.querySelector(".display");
 const shift     = document.querySelector(".shift");
 const backspace = document.querySelector(".backspace");
 const clear     = document.querySelector(".clear");
-
+const space     = document.querySelector(".space");
 
 
 function checkSpecialButton(button) {
@@ -47,7 +47,10 @@ function writeContent(buttons, display) {
     for (let button of buttons) {
         button.addEventListener("click", () => {
             if (!checkSpecialButton(button))
-                display.textContent += button.textContent;
+                if (button.textContent.toLowerCase() == "space")
+                    display.textContent += " ";
+                else
+                    display.textContent += button.textContent;
         });
     }
 }
