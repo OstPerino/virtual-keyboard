@@ -1,26 +1,30 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: #CFFFDC;
 }
 
 body {
     background-color: #7900FF;
-    color: #CFFFDC;
 }
 
 .display {
     margin: auto;
+    margin-top: 100px;
     width: 500px;
     display: flex;
     justify-content: center;
     padding: 15px;
-    border: 2px solid #548CFF;
+    border: 5px solid #93FFD8;
+    border-bottom: 2.5px solid #93FFD8;
 }
 
 .container {
     margin: auto;
     width: 500px;
-    border: 2px solid #548CFF;
+    border: 5px solid #93FFD8;
+    border-top: 2.5px solid #93FFD8;
     padding: 15px;
 }
 
@@ -34,8 +38,15 @@ body {
     margin-left: 5px;
     width: 30px;
     height: 30px;
+    background-color: #548CFF;
+    border: none;
 }
 
-.btn.shift {
+.btn.special {
     width: 60px;
+}
+
+.btn:hover {
+    background-color: #93FFD8;
+    color: #7900FF;
 }
