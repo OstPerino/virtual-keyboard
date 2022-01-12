@@ -6,6 +6,14 @@ const backspace = document.querySelector(".backspace");
 const clear     = document.querySelector(".clear");
 
 
+
+function checkSpecialButton(button) {
+    if (button == shift || button == backspace || button == clear)
+        return true;
+    else
+        return false;
+}
+
 function shiftController(shift, buttons) {
     shift.addEventListener("click", () => {
 
@@ -14,7 +22,7 @@ function shiftController(shift, buttons) {
 
             for (let button of buttons) {
                 
-                if (button == shift || button == backspace || button == clear) 
+                if (checkSpecialButton(button)) 
                     continue;
                 
                 button.textContent = button.textContent.toUpperCase();
@@ -25,7 +33,7 @@ function shiftController(shift, buttons) {
 
             for (let button of buttons) {
 
-                if (button == shift || button == backspace || button == clear) 
+                if (checkSpecialButton(button)) 
                     continue;
 
                 button.textContent = button.textContent.toLowerCase();
@@ -38,10 +46,18 @@ function shiftController(shift, buttons) {
 function writeContent(buttons, display) {
     for (let button of buttons) {
         button.addEventListener("click", () => {
-            display.textContent += button.textContent;
+            if (!checkSpecialButton(button))
+                display.textContent += button.textContent;
         });
     }
 }
 
+function clearContent(clear, display) {
+    clear.addEventListener("click", () => {
+        display.textContent = "";
+    })
+}
+
 shiftController(shift, buttons);
 writeContent(buttons, display);
+clearContent(clear, display);
