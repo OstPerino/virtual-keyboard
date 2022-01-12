@@ -35,4 +35,13 @@ function shiftController(shift, buttons) {
     });
 }
 
+function writeContent(buttons, display) {
+    for (let button of buttons) {
+        button.addEventListener("click", () => {
+            display.textContent += button.textContent;
+        });
+    }
+}
+
 shiftController(shift, buttons);
+writeContent(buttons, display);
