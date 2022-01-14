@@ -47,7 +47,7 @@ function writeContent(buttons, display) {
     for (let button of buttons) {
         button.addEventListener("click", () => {
             if (!checkSpecialButton(button))
-                if (button.textContent.toLowerCase() == "space")
+                if (button.textContent.toLowerCase() == "space") 
                     display.textContent += " ";
                 else
                     display.textContent += button.textContent;
